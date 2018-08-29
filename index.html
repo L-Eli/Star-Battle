@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Star Battle</title>
+
+        <link rel="stylesheet" href="css/animation.css">
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+        <div class="absolute position-center-middle full-screen star-battle">
+            <div class="absolute full-screen game-container animation-pause"></div>
+
+            <div class="absolute position-left position-bottom sensible-area">
+                <div class="absolute direction left"></div>
+                <div class="absolute direction right"></div>
+                <div class="absolute direction up"></div>
+                <div class="absolute direction down"></div>
+                <div class="absolute position-center-middle center-point"></div>
+                <div class="absolute position-center-middle move-point"></div>
+            </div>
+
+            <button class="absolute position-right position-bottom font-title btn" id="btn_fire">FIRE</button>
+
+            <div class="absolute full-screen game-stop-cover"></div>
+            <div class="absolute full-screen game-over-cover" hidden></div>
+
+            <button class="absolute position-right btn" id="btn_mute">
+                <img class="absolute position-center-middle sound-on-icon" src="img/sound-on-icon.png" alt="">
+                <img class="absolute position-center-middle sound-off-icon" src="img/sound-off-icon.png" alt="" hidden>
+            </button>
+
+            <div class="absolute position-center function-container">
+                <div class="absolute position-center flex justify-around function-group">
+                    <div class="relative flex justify-center function">
+                        <span id="score"></span>
+                    </div>
+                    <div class="relative flex flex-column justify-around function">
+                        <img src="img/fuel.png" alt="">
+                        <span id="fuel"></span>
+                        <div class="absolute position-bottom fuel-percentage animation-pause"></div>
+                    </div>
+                    <img class="relative" src="img/logo.png" alt="">
+                    <button class="relative function btn" id="btn_play_or_pause">
+                        <img class="absolute position-center-middle play-icon" src="img/play-icon.png" alt="">
+                        <img class="absolute position-center-middle pause-icon" src="img/pause-icon.png" alt="" hidden>
+                    </button>
+                    <div class="relative flex justify-center function">
+                        <span id="time"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute position-center position-bottom font-size-container">
+                <div class="absolute position-center position-bottom flex justify-center font-size-group">
+                    <button class="btn" id="btn_font_size_smaller">-</button>
+                    <button class="btn" id="btn_font_size_bigger">+</button>
+                    <span class="absolute font-title">FONT SIZE</span>
+                </div>
+            </div>
+
+            <div class="absolute position-center-middle start-container">
+                <div class="flex justify-center header">
+                    <img src="img/logo.png" alt="">
+                    <span class="font-title">Star Battle</span>
+                </div>
+                <div class="instruction-group" hidden>
+                    <div class="font-title">How to Play Star Battle.</div>
+                    <ol>
+                        <li>Move the spaceship using the sensible areas in the screen;</li>
+                        <li>The timer present the time lapsed;</li>
+                        <li>The fuel counter show the remain fuel;</li>
+                        <li>During the flight, the spaceship needs to destroy the asteroids and enemy spaceships that are presented in the space;</li>
+                        <li>You can shoot pressing Space Bar;</li>
+                        <li>If the spaceship hits a asteroid or another spaceship, you lose 15 points of fuel;</li>
+                        <li>Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy destroyed;</li>
+                        <li>Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid destroyed;</li>
+                        <li>If you destroy a friendly spaceship, you lose 10 points;</li>
+                        <li>During the flight, the spaceship needs to collect fuel in the space;</li>
+                        <li>You can pause the game clicking in a button pause, or pressing the letter "p";</li>
+                        <li>Go beyond all limits;</li>
+                    </ol>
+                    <div class="footer">Battle in Space with Star Battle Championship...</div>
+                </div>
+                <div class="flex justify-between">
+                    <button class="btn" id="btn_how_to_play">How To Play</button>
+                    <button class="btn" id="btn_start_game">Start Game</button>
+                </div>
+            </div>
+
+            <div class="absolute position-center-middle end-container" hidden>
+                <div class="flex justify-center header">
+                    <img src="img/logo.png" alt="">
+                    <span class="font-title">Input Your Name</span>
+                </div>
+                <form class="flex flex-column" action="register.php">
+                    <input name="name" id="name">
+                    <button class="btn disabled" id="btn_continue">Continue</button>
+                </form>
+            </div>
+
+            <div class="absolute position-center-middle ranking-container" hidden>
+                <div class="flex justify-center header">
+                    <img src="img/logo.png" alt="">
+                    <span class="font-title">Ranking Table</span>
+                </div>
+                <div class="ranking-group">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Position</td>
+                                <td>Name</td>
+                                <td>Score</td>
+                                <td>Time</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <button class="btn" id="btn_restart_game">Start Game</button>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/class.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

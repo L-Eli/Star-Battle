@@ -1,0 +1,439 @@
+* {
+    font-family: fantasy;
+}
+
+body {
+    background: #111;
+
+    user-select: none;
+}
+
+.star-battle {
+    box-shadow: gray 0 0 5px 5px;
+
+    overflow: hidden;
+}
+
+.shake {
+    animation: game-shake-animation .1s 4 linear !important;
+}
+
+.game-container {
+    background: url('../img/background.jpg');
+
+    animation: game-bg-move-animation 86400s linear;
+}
+
+.sensible-area {
+    width: 120px;
+    height: 120px;
+    margin: 40px;
+    border-radius: 50%;
+
+    background: rgba(1, 103, 110, .5);
+}
+
+.direction {
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid rgb(1, 103, 110);
+    border-top: 2px solid rgb(1, 103, 110);
+}
+
+.left {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.right {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.up {
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.down {
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%) rotate(-135deg);
+}
+
+.center-point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    background: rgb(1, 103, 110);
+}
+
+.move-point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    background: yellow;
+}
+
+#btn_fire {
+    width: 100px;
+    height: 100px;
+    margin: 45px;
+    border-radius: 50%;
+
+    background: rgba(1, 103, 110, .5);
+}
+
+#btn_fire:hover {
+    box-shadow: #f19e0d 0 0 3px 3px;
+    background: #f19e0d;
+
+    transition: all .3s;
+}
+
+.game-stop-cover {
+    background: gray;
+
+    opacity: .5;
+}
+
+.game-over-cover {
+    background: purple;
+
+    opacity: .5;
+}
+
+#btn_mute {
+    width: 20px;
+    height: 20px;
+    margin: 30px;
+
+    background: transparent;
+}
+
+.function-container,
+.font-size-container {
+    color: white;
+
+    opacity: .8;
+}
+
+.function-container:hover,
+.font-size-container:hover {
+    opacity: 1;
+}
+
+.function-container::before,
+.font-size-container::before {
+    position: absolute;
+    left: 50%;
+
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+
+    content: '';
+}
+
+.function-container::before {
+    transform: translate(-50%, -85%);
+
+    background: radial-gradient(white, blue);
+}
+
+.function-group {
+    width: 425px;
+}
+
+.function-group > img {
+    width: 140px;
+
+    top: 40px;
+}
+
+.function {
+    width: 60px;
+    height: 60px;
+    border: 3px dashed yellowgreen;
+    border-radius: 50%;
+
+    box-sizing: border-box;
+
+    background: rgb(1, 103, 110);
+}
+
+.function:nth-child(2),
+.function:nth-child(4) {
+    top: 40px;
+}
+
+.function:nth-child(2) {
+    overflow: hidden;
+}
+
+.function:nth-child(2) > img {
+    width: 15px;
+}
+
+.function:nth-child(2) > *:not(.fuel-percentage) {
+    z-index: 1;
+}
+
+.fuel-percentage {
+    width: 100%;
+
+    background: darkred;
+
+    animation: fuel-bg-color-change-animation 2s infinite linear;
+}
+
+.font-size-container::before {
+    transform: translate(-50%, -15%);
+
+    background: linear-gradient(90deg, rgb(84, 84, 196) 50%, rgb(189, 81, 81) 50%);
+}
+
+.font-size-group {
+    height: 50px;
+}
+
+#btn_font_size_smaller,
+#btn_font_size_bigger {
+    width: 200px;
+
+    background: transparent;
+    font-size: 40px !important;
+    font-weight: bold;
+}
+
+.start-container,
+.end-container,
+.ranking-container {
+    width: 50%;
+    border-radius: 5px;
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: white;
+}
+
+.instruction-group,
+.ranking-group {
+    margin-bottom: 20px;
+    border: 1px solid gray;
+
+    box-sizing: border-box;
+
+    overflow-y: scroll;
+}
+
+.instruction-group {
+    height: 300px;
+    padding: 15px;
+}
+
+.instruction-group > .font-title,
+li,
+.footer {
+    width: 100%;
+
+    transform: scale(0);
+
+    animation: instruction-animation .35s forwards linear;
+}
+
+.instruction-group > .font-title {
+    color: orangered;
+
+    animation-delay: .15s;
+}
+
+li:nth-child(1) {
+    animation-delay: .3s;
+}
+
+li:nth-child(2) {
+    animation-delay: .45s;
+}
+
+li:nth-child(3) {
+    animation-delay: .6s;
+}
+
+li:nth-child(4) {
+    animation-delay: .75s;
+}
+
+li:nth-child(5) {
+    animation-delay: .9s;
+}
+
+li:nth-child(6) {
+    animation-delay: 1.05s;
+}
+
+li:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+li:nth-child(8) {
+    animation-delay: 1.35s;
+}
+
+li:nth-child(9) {
+    animation-delay: 1.5s;
+}
+
+li:nth-child(10) {
+    animation-delay: 1.65s;
+}
+
+li:nth-child(11) {
+    animation-delay: 1.8s;
+}
+
+li:nth-child(12) {
+    animation-delay: 1.95s;
+}
+
+.footer {
+    color: #f19e0d;
+
+    animation-delay: 2.1s;
+}
+
+#btn_how_to_play {
+    width: 30%;
+    border-radius: 30px;
+}
+
+#btn_start_game {
+    width: 60%;
+}
+
+#name {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+#btn_continue,
+#btn_restart_game {
+    width: 100%;
+}
+
+.disabled {
+    background: gray !important;
+
+    cursor: not-allowed;
+}
+
+.ranking-group {
+    height: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+tr {
+    height: 40px;
+}
+
+thead > tr {
+    background: #f19e0d;
+}
+
+tbody > tr:nth-child(2n) {
+    background: rgb(255, 226, 231);
+}
+
+tbody > tr:hover {
+    background: gray;
+    color: white;
+}
+
+.planet {
+    filter: brightness(.3);
+}
+
+.main-ship {
+    width: 100px;
+    height: 50px;
+
+    background: url('../img/main-ship-1.png');
+
+    animation: main-ship-img-change-animation .2s infinite;
+}
+
+.bullet {
+    width: 30px;
+    height: 2px;
+}
+
+.defense {
+    background: linear-gradient(-90deg, white, blue);
+}
+
+.attack {
+    background: linear-gradient(90deg, white, red);
+}
+
+.spaceship {
+    width: 80px;
+    height: 80px;
+}
+
+.friend {
+    background: url('../img/friend.png');
+}
+
+.enemy {
+    background: url('../img/enemy.png');
+}
+
+.asteroid {
+    width: 60px;
+    height: 60px;
+
+    background: url('../img/asteroid.png');
+
+    animation: asteroid-rotate-animation 2s infinite linear;
+}
+
+.destroyed {
+    background: url('../img/asteroid-destroyed.png');
+}
+
+.fuel {
+    width: 50px;
+    height: 50px;
+
+    background: url('../img/fuel.png');
+
+    animation: fuel-rotate-animation 2s infinite linear;
+}
+
+.explosion {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    background: red;
+
+    transform: scale(0);
+
+    animation: explosion-animation .2s linear;
+}

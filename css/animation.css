@@ -1,0 +1,59 @@
+@keyframes game-bg-move-animation {
+    to {
+        background-position-x: 432000%;
+    }
+}
+
+@keyframes game-shake-animation {
+    25% {
+        left: 10px;
+    }
+    50% {
+        left: 0;
+    }
+    75% {
+        left: -10px;
+    }
+}
+
+@keyframes fuel-bg-color-change-animation {
+    50% {
+        background: red;
+    }
+}
+
+@keyframes instruction-animation {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes main-ship-img-change-animation {
+    to {
+        background: url('../img/main-ship-2.png');
+    }
+}
+
+@keyframes asteroid-rotate-animation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fuel-rotate-animation {
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes explosion-animation {
+    to {
+        transform: scale(1);
+    }
+}
